@@ -125,6 +125,87 @@
           Steam — Persona 5 Royal
         </a>
       </div>
+
+      <div style="border-top:1px solid var(--border);margin:44px 0 36px;"></div>
+      <div class="section-label">나의 페르소나</div>
+      <h2>어떤 시리즈가 나에게 맞을까?</h2>
+
+      <div class="quiz-wrap" id="pq">
+        <div class="quiz-progress"><div class="quiz-bar" id="pq-bar" style="width:0%"></div></div>
+        <div id="pq-body">
+          <div class="quiz-q" id="pq-q"></div>
+          <div class="quiz-choices" id="pq-choices"></div>
+        </div>
+        <div id="pq-result" class="quiz-result" hidden></div>
+      </div>
+
+      <script>
+      (function(){
+        var Q=[
+          {q:"Q1. 평소 인간관계 스타일은?",c:[
+            {t:"① 소수의 깊고 진한 유대를 소중히 여긴다",p:"P3"},
+            {t:"② 다양한 사람과 넓고 따뜻한 관계를 맺는다",p:"P4"},
+            {t:"③ 개성 강한 동료와 함께 세상에 맞선다",p:"P5"}
+          ]},
+          {q:"Q2. 선호하는 분위기는?",c:[
+            {t:"① 어둡고 철학적인 세계관",p:"P3"},
+            {t:"② 미스터리한 일상과 따뜻한 감성",p:"P4"},
+            {t:"③ 세련되고 반항적인 도시 감성",p:"P5"}
+          ]},
+          {q:"Q3. 끌리는 음악 스타일은?",c:[
+            {t:"① 우울하고 감성적인 재즈 보컬",p:"P3"},
+            {t:"② 밝고 경쾌한 팝 록",p:"P4"},
+            {t:"③ 펑키하고 강렬한 재즈 록",p:"P5"}
+          ]},
+          {q:"Q4. 가장 마주하기 두려운 것은?",c:[
+            {t:"① 죽음과 소멸의 진실",p:"P3"},
+            {t:"② 진실을 외면하는 자기 자신",p:"P4"},
+            {t:"③ 억압과 부당한 권력",p:"P5"}
+          ]}
+        ];
+        var R={
+          P3:{emoji:"🌑",name:"Persona 3 Reload",sub:'"죽음을 받아들여야 비로소 살 수 있다"',
+            desc:"깊고 철학적인 감성을 지닌 당신. 소수의 진정한 유대를 소중히 여기고, 어두운 진실과 정면으로 마주하는 용기를 가진 타입입니다. 타르타로스의 어둠 속에서도 끝까지 함께할 SEES의 동료들이 기다립니다."},
+          P4:{emoji:"☁️",name:"Persona 4 Golden",sub:'"진실을 밝혀라, 안개 너머에"',
+            desc:"따뜻한 인간관계를 중심에 두고, 일상 속 미스터리를 즐기는 당신. 다양한 사람들과 자연스럽게 어울리며 진실을 향해 나아가는 탐정 기질이 있습니다. 황금빛 이나바에서 당신을 기다리는 동료들이 있습니다."},
+          P5:{emoji:"🃏",name:"Persona 5 Royal",sub:'"마음을 훔쳐라, 팬텀 씨프즈"',
+            desc:"억압에 저항하는 반항아적 기질을 가진 당신. 개성 강한 동료들과 함께 부당한 세상에 맞서는 세련된 반항아 타입입니다. 메타버스의 팰리스에서 당신의 페르소나가 깨어날 준비를 하고 있습니다."}
+        };
+        var step=0, sc={P3:0,P4:0,P5:0};
+        function render(){
+          var bar=document.getElementById('pq-bar');
+          var body=document.getElementById('pq-body');
+          var res=document.getElementById('pq-result');
+          bar.style.width=(step/Q.length*100)+'%';
+          if(step<Q.length){
+            body.hidden=false; res.hidden=true;
+            document.getElementById('pq-q').textContent=Q[step].q;
+            var ch=document.getElementById('pq-choices');
+            ch.innerHTML='';
+            Q[step].c.forEach(function(c){
+              var b=document.createElement('button');
+              b.className='quiz-choice'; b.textContent=c.t;
+              b.onclick=function(){sc[c.p]+=2;step++;render();};
+              ch.appendChild(b);
+            });
+          } else {
+            bar.style.width='100%';
+            body.hidden=true; res.hidden=false;
+            var w=Object.entries(sc).sort(function(a,b){return b[1]-a[1];})[0][0];
+            var r=R[w];
+            res.innerHTML=
+              '<span class="quiz-result-emoji">'+r.emoji+'</span>'+
+              '<span class="quiz-result-label">당신의 페르소나는</span>'+
+              '<div class="quiz-result-name">'+r.name+'</div>'+
+              '<div class="quiz-result-sub">'+r.sub+'</div>'+
+              '<div class="quiz-result-desc">'+r.desc+'</div>'+
+              '<button class="quiz-retry" onclick="_pqReset()">↩ 다시하기</button>';
+          }
+        }
+        window._pqReset=function(){step=0;sc={P3:0,P4:0,P5:0};render();};
+        render();
+      })();
+      </script>
     </section>
 
     <div class="divider"></div>

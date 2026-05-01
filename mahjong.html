@@ -123,6 +123,105 @@
           대신 1판 + 우라도라 등 보너스를 받을 수 있습니다.
         </p>
       </div>
+
+      <div style="border-top:1px solid var(--border);margin:44px 0 36px;"></div>
+      <div class="section-label">나의 역만</div>
+      <h2>운명의 역만을 찾아라</h2>
+
+      <div class="quiz-wrap" id="yq">
+        <div class="quiz-progress"><div class="quiz-bar" id="yq-bar" style="width:0%"></div></div>
+        <div id="yq-body">
+          <div class="quiz-q" id="yq-q"></div>
+          <div class="quiz-choices" id="yq-choices"></div>
+        </div>
+        <div id="yq-result" class="quiz-result" hidden></div>
+      </div>
+
+      <script>
+      (function(){
+        var Q=[
+          {q:"Q1. 승부에서 나는?",c:[
+            {t:"① 압도적으로 이기거나 지거나, 중간은 없다",add:{daisuushii:3}},
+            {t:"② 한 방을 노리고 끝까지 숨긴다",add:{kokushi:2,suuankou:2}},
+            {t:"③ 흐름을 타고 자연스럽게 완성한다",add:{ryuuiisou:2,churen:1}}
+          ]},
+          {q:"Q2. 평소 스타일은?",c:[
+            {t:"① 완벽하게 갖춰야 직성이 풀린다",add:{churen:3}},
+            {t:"② 희귀하고 남들이 못 하는 걸 한다",add:{kokushi:2,suuankou:1}},
+            {t:"③ 순수하게 한 가지만 파고든다",add:{tsuuiisou:2,ryuuiisou:2}}
+          ]},
+          {q:"Q3. 위기 상황에서 나는?",c:[
+            {t:"① 버티면서 역전을 노린다",add:{suuankou:2,daisangen:2}},
+            {t:"② 처음부터 위험한 패를 안 만든다",add:{tsuuiisou:2,tenhou:1}},
+            {t:"③ 상황이고 뭐고 그냥 밀어붙인다",add:{daisuushii:2,tenhou:2}}
+          ]},
+          {q:"Q4. 내가 원하는 승리란?",c:[
+            {t:"① 아무도 예상 못 한 완벽한 한 방",add:{kokushi:2,churen:2}},
+            {t:"② 처음부터 끝까지 내 페이스대로",add:{tsuuiisou:2,ryuuiisou:2}},
+            {t:"③ 극적인 역전, 드라마틱하게",add:{daisangen:3,tenhou:2}}
+          ]}
+        ];
+        var ORDER=['kokushi','churen','tenhou','suuankou','daisangen','tsuuiisou','ryuuiisou','daisuushii'];
+        var R={
+          kokushi:{emoji:"🀄",name:"국사무쌍 (国士無双)",
+            desc:"13종의 요구패를 모두 모아 완성하는 전설의 역만. 남들이 버리는 패를 모아 독자적인 길을 개척하는 당신. 아무도 예측하지 못하는 방식으로 한 판을 지배하는 고독한 승부사입니다."},
+          churen:{emoji:"🔮",name:"구련보등 (九蓮宝燈)",
+            desc:"1112345678999에 한 장을 더해 완성하는 완전주의자의 역만. 흐름을 타고 자연스럽게, 하지만 누구보다 철저하게 준비한 끝에 빛나는 역만입니다."},
+          tenhou:{emoji:"☄️",name:"천화 (天和)",
+            desc:"배패에서 이미 완성. 처음부터 모든 것이 결정된 운명의 역만. 기다림 없이 첫 순간에 모든 것을 폭발시키는 당신은 타고난 승부사입니다."},
+          suuankou:{emoji:"🗿",name:"사암각 (四暗刻)",
+            desc:"4개의 암각을 혼자 힘으로 완성. 아무도 모르게 조용히 쌓아올리다 한 방에 터뜨리는 역만. 묵묵히 버티며 역전을 노리는 인내의 승부사입니다."},
+          daisangen:{emoji:"🐉",name:"대삼원 (大三元)",
+            desc:"중, 발, 백 세 삼원패를 모두 완성. 위기 속에서 극적인 역전을 만들어내는 드라마틱한 역만. 테이블을 압도하는 존재감을 가진 승부사입니다."},
+          tsuuiisou:{emoji:"🀇",name:"자일색 (字一色)",
+            desc:"오직 자패만으로 완성. 흔들리지 않는 신념으로 한 길만 걷는 역만. 위험한 길을 피하고 자신만의 세계를 구축하는 고고한 승부사입니다."},
+          ryuuiisou:{emoji:"🌿",name:"녹일색 (緑一色)",
+            desc:"녹색 패만으로 완성하는 아름다운 역만. 한 가지에 완전히 몰두해 최고가 되는 타입. 흐름에 순응하면서도 자신만의 색깔을 잃지 않는 장인입니다."},
+          daisuushii:{emoji:"💥",name:"대사희 (大四喜)",
+            desc:"동남서북 네 바람패 모두를 완성하는 더블 역만의 제왕. 처음부터 끝까지 압도적인 존재감으로 테이블을 지배하는 진정한 승부사입니다."}
+        };
+        var step=0;
+        var sc={kokushi:0,churen:0,tenhou:0,suuankou:0,daisangen:0,tsuuiisou:0,ryuuiisou:0,daisuushii:0};
+        function render(){
+          var bar=document.getElementById('yq-bar');
+          var body=document.getElementById('yq-body');
+          var res=document.getElementById('yq-result');
+          bar.style.width=(step/Q.length*100)+'%';
+          if(step<Q.length){
+            body.hidden=false; res.hidden=true;
+            document.getElementById('yq-q').textContent=Q[step].q;
+            var ch=document.getElementById('yq-choices');
+            ch.innerHTML='';
+            Q[step].c.forEach(function(c){
+              var b=document.createElement('button');
+              b.className='quiz-choice'; b.textContent=c.t;
+              b.onclick=function(){
+                Object.keys(c.add).forEach(function(k){sc[k]+=c.add[k];});
+                step++; render();
+              };
+              ch.appendChild(b);
+            });
+          } else {
+            bar.style.width='100%';
+            body.hidden=true; res.hidden=false;
+            var w=ORDER.reduce(function(best,k){return sc[k]>sc[best]?k:best;},ORDER[0]);
+            var r=R[w];
+            res.innerHTML=
+              '<span class="quiz-result-emoji">'+r.emoji+'</span>'+
+              '<span class="quiz-result-label">당신의 운명의 역만은</span>'+
+              '<div class="quiz-result-name">'+r.name+'</div>'+
+              '<div class="quiz-result-desc">'+r.desc+'</div>'+
+              '<button class="quiz-retry" onclick="_yqReset()">↩ 다시하기</button>';
+          }
+        }
+        window._yqReset=function(){
+          step=0;
+          Object.keys(sc).forEach(function(k){sc[k]=0;});
+          render();
+        };
+        render();
+      })();
+      </script>
     </section>
 
     <div class="divider"></div>
