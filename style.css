@@ -447,13 +447,10 @@ footer {
 /* ── GAME BANNER ─────────────────────────────── */
 #game-banner {
   position: fixed;
-  bottom: 28px;
+  top: 50%;
   right: 28px;
+  transform: translateY(-50%);
   z-index: 9000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
 }
 
 #banner-btn {
@@ -481,6 +478,9 @@ footer {
 .banner-icon { font-size: 1.1rem; }
 
 #banner-popup {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
   background: var(--dark2, #13131a);
   border: 1px solid rgba(167,139,250,0.25);
   border-radius: 14px;
