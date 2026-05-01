@@ -168,12 +168,14 @@ body {
 .game-card.mahjong   { --card-accent: #f0c060; }
 .game-card.wuthering { --card-accent: #00e5ff; }
 .game-card.seven     { --card-accent: #ce93d8; }
+.game-card.persona   { --card-accent: #4a9eff; }
 
 .game-card.dbd:hover       { box-shadow: 0 16px 50px rgba(224,92,74,0.35);  border-color: rgba(224,92,74,0.4); }
 .game-card.peak:hover      { box-shadow: 0 16px 50px rgba(79,195,247,0.3);  border-color: rgba(79,195,247,0.4); }
 .game-card.mahjong:hover   { box-shadow: 0 16px 50px rgba(240,192,96,0.3);  border-color: rgba(240,192,96,0.4); }
 .game-card.wuthering:hover { box-shadow: 0 16px 50px rgba(0,229,255,0.3);   border-color: rgba(0,229,255,0.4); }
 .game-card.seven:hover     { box-shadow: 0 16px 50px rgba(206,147,216,0.3); border-color: rgba(206,147,216,0.4); }
+.game-card.persona:hover   { box-shadow: 0 16px 50px rgba(74,158,255,0.35); border-color: rgba(74,158,255,0.4); }
 
 /* 이미지 없는 게임 폴백 배경 */
 .game-card.dbd .card-img       { background-color: #2a0505; }
@@ -183,6 +185,7 @@ body {
 .game-card.seven .card-img {
   background: linear-gradient(135deg, #1a0530 0%, #0d0220 40%, #200535 100%);
 }
+.game-card.persona .card-img { background-color: #020810; }
 
 .card-genre {
   font-size: 0.72rem;
@@ -568,6 +571,45 @@ footer {
 
 .recommend-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 .recommend-btn:active { transform: translateY(0); }
+
+/* ── STEAM LINKS ─────────────────────────────── */
+.steam-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.steam-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #1b2838;
+  border: 1px solid rgba(102,192,244,0.3);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #66c0f4;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, color 0.2s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.steam-btn:hover {
+  background: #2a475e;
+  border-color: rgba(102,192,244,0.65);
+  transform: translateY(-2px);
+  color: #c7e8ff;
+}
+
+.steam-btn .steam-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 768px) {
