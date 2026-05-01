@@ -258,7 +258,7 @@ body {
   z-index: 1;
 }
 
-.page-hero > * { position: relative; z-index: 2; }
+.page-hero > *:not(.page-hero-bg) { position: relative; z-index: 2; }
 
 .page-tag {
   display: inline-block;
