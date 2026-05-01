@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahjong Soul — My Games</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --accent: #f0c060;
+      --hero-glow: rgba(240, 192, 96, 0.2);
+    }
+    body { background: #0b0800; }
+    .page-hero { background: linear-gradient(to bottom, #1e1205, #0b0800); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">🎮 My Games</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dbd.html">Dead by Daylight</a></li>
+      <li><a href="peak.html">Peak</a></li>
+      <li><a href="mahjong.html" class="active">Mahjong Soul</a></li>
+      <li><a href="wuthering.html">Wuthering Waves</a></li>
+      <li><a href="seven.html">Seven Nights Reverse</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-tag">Board Game · Strategy</div>
+      <h1>Mahjong Soul</h1>
+      <p>전략과 운명이 교차하는 테이블 위. 패를 맞추고, 호를 외쳐라.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content-section">
+      <div class="section-label">게임 소개</div>
+      <h2>귀여운 마작의 세계</h2>
+      <p>
+        Mahjong Soul(작혼)은 Catfood Studio가 개발한 온라인 리치 마작 게임입니다.
+        일본 리치 마작을 기반으로 하며, 귀여운 애니메이션 캐릭터들과 화려한 연출로
+        마작 입문자부터 고수까지 폭넓은 팬층을 보유하고 있습니다.
+      </p>
+      <p>
+        마작은 136개의 패를 이용해 정해진 조합(역)을 완성하는 4인 게임입니다.
+        단순한 운이 아닌, 상대의 패를 읽고 수비와 공격을 넘나드는 고도의 심리전이 펼쳐집니다.
+        Mahjong Soul은 이 긴장감을 아름다운 비주얼과 함께 즐길 수 있게 해줍니다.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-value">2018</span>
+          <span class="stat-label">출시 연도</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">4인</span>
+          <span class="stat-label">기본 플레이어</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">무료</span>
+          <span class="stat-label">가격</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">PC / 모바일</span>
+          <span class="stat-label">플랫폼</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content-section">
+      <div class="section-label">마작 기초</div>
+      <h2>마작, 이것만 알면 시작할 수 있다</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">🀄</div>
+          <h3>패 구성</h3>
+          <p>만수패, 통수패, 삭수패 1~9와 자패(동남서북중발백)로 이루어진 136장의 패.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🎯</div>
+          <h3>화료(호)</h3>
+          <p>14장의 패로 정해진 조합을 완성하면 "호(和了)"를 외칩니다. 조합에는 역이 하나 이상 있어야 합니다.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <h3>리치</h3>
+          <p>텐파이(한 장만 오면 완성) 상태에서 리치를 선언하면 1판(역)이 추가됩니다.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🎲</div>
+          <h3>점수 계산</h3>
+          <p>역의 종류와 판수, 부수에 따라 점수가 계산됩니다. 더 높은 역일수록 큰 점수를 받습니다.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>🌸 대표 역 - 탄야오</h3>
+        <p>
+          2~8 숫자패만으로 완성하는 역. 1, 9, 자패 없이 이루어지는 가장 기본적인 역으로
+          입문자도 노리기 쉽고, 실전에서 가장 많이 나오는 역입니다.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>⚡ 대표 역 - 리치</h3>
+        <p>
+          텐파이 상태에서 선언하는 역. 1000점을 공탁하고 리치봉을 올리면 선언한 패에서만 화료 가능해집니다.
+          대신 1판 + 우라도라 등 보너스를 받을 수 있습니다.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content-section">
+      <div class="section-label">왜 좋아하나요?</div>
+      <h2>나에게 Mahjong Soul이란</h2>
+      <p>
+        마작은 운과 전략이 절묘하게 섞인 게임입니다. 같은 패를 받아도 어떻게 읽고 버리느냐에 따라
+        결과가 완전히 달라집니다. 한 판 한 판이 짧은 드라마 같습니다.
+      </p>
+      <p>
+        Mahjong Soul의 귀여운 캐릭터들은 마작의 진입 장벽을 낮춰주면서도,
+        막상 시작하면 끝없이 깊어지는 전략의 세계로 빠져들게 만듭니다.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 My Favorite Games · Made with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

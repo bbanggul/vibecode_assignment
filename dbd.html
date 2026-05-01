@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dead by Daylight — My Games</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --accent: #c0392b;
+      --hero-glow: rgba(192, 57, 43, 0.25);
+    }
+    body { background: #0a0404; }
+    .page-hero { background: linear-gradient(to bottom, #180202, #0a0404); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">🎮 My Games</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dbd.html" class="active">Dead by Daylight</a></li>
+      <li><a href="peak.html">Peak</a></li>
+      <li><a href="mahjong.html">Mahjong Soul</a></li>
+      <li><a href="wuthering.html">Wuthering Waves</a></li>
+      <li><a href="seven.html">Seven Nights Reverse</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-tag">Horror · Asymmetric Multiplayer</div>
+      <h1>Dead by<br>Daylight</h1>
+      <p>빛도 없고, 탈출도 없다. 오직 생존만이 있을 뿐.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content-section">
+      <div class="section-label">게임 소개</div>
+      <h2>어둠 속의 숨바꼭질</h2>
+      <p>
+        Dead by Daylight는 Behaviour Interactive가 개발한 1 대 4 비대칭 멀티플레이어 공포 게임입니다.
+        4명의 생존자는 발전기를 수리해 탈출구를 열어야 하고, 1명의 살인마는 그들을 모두 제물로 바쳐야 합니다.
+        어둠 속, 안개 가득한 맵에서 추격과 도주의 긴장감이 끊임없이 이어집니다.
+      </p>
+      <p>
+        2016년 출시 이후 꾸준히 업데이트되며 수많은 DLC 캐릭터를 추가해 왔습니다.
+        레지던트 이블, 사일런트 힐, 스트레인저 싱스 등 다양한 인기 IP와의 컬래버레이션이 이루어졌으며,
+        현재까지도 활발한 유저층을 자랑하는 공포 게임의 대명사입니다.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-value">2016</span>
+          <span class="stat-label">출시 연도</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">4 vs 1</span>
+          <span class="stat-label">플레이어 구성</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">50+</span>
+          <span class="stat-label">살인마 수</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">PC / 콘솔</span>
+          <span class="stat-label">플랫폼</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content-section">
+      <div class="section-label">게임 방식</div>
+      <h2>생존자 vs 살인마</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">🔧</div>
+          <h3>발전기 수리</h3>
+          <p>생존자들은 맵 곳곳에 흩어진 5개의 발전기를 수리해 탈출 게이트를 활성화해야 합니다.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🚪</div>
+          <h3>탈출</h3>
+          <p>발전기가 모두 수리되면 탈출 게이트가 열립니다. 살아서 빠져나가는 것이 목표입니다.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🪝</div>
+          <h3>갈고리</h3>
+          <p>살인마는 생존자를 기절시킨 후 갈고리에 걸어 제물로 바칩니다. 세 번이면 게임 아웃.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">💀</div>
+          <h3>퍽 시스템</h3>
+          <p>생존자와 살인마 모두 퍽을 장착해 자신만의 전략을 구성할 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content-section">
+      <div class="section-label">대표 살인마</div>
+      <h2>안개 속의 사냥꾼들</h2>
+
+      <div class="highlight-box">
+        <h3>⚙ 트래퍼 (The Trapper)</h3>
+        <p>
+          맥밀란 부동산의 아들, 에반 맥밀란. 곰 덫을 맵 곳곳에 설치해 생존자의 발을 묶어버리는 가장 오래된 살인마.
+          Dead by Daylight의 상징적인 존재로, 게임의 아이콘입니다.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>✂ 너스 (The Nurse)</h3>
+        <p>
+          벽과 장애물을 순간이동처럼 통과하는 블링크 능력을 지닌 살인마. 숙련된 플레이어의 너스를 상대하면 숨을 공간이 없습니다.
+          최고 난이도이자 최강 캐릭터로 손꼽힙니다.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>🪓 헌트리스 (The Huntress)</h3>
+        <p>
+          러시아 오지에서 홀로 자란 야생의 여인. 손도끼를 원거리에서 정확하게 던져 맞힐 수 있는 유일한 살인마로,
+          토끼 마스크와 자장가가 트레이드마크입니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2016 Behaviour Interactive Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

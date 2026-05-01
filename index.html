@@ -3,115 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dead by Daylight</title>
+  <title>My Favorite Games</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- 배경 안개 레이어 -->
-  <div class="fog fog1"></div>
-  <div class="fog fog2"></div>
+  <nav class="navbar">
+    <div class="nav-logo">🎮 My Games</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="dbd.html">Dead by Daylight</a></li>
+      <li><a href="peak.html">Peak</a></li>
+      <li><a href="mahjong.html">Mahjong Soul</a></li>
+      <li><a href="wuthering.html">Wuthering Waves</a></li>
+      <li><a href="seven.html">Seven Nights Reverse</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
 
-  <!-- 헤더 -->
-  <header>
-    <div class="header-content">
-      <p class="header-sub">BEHAVIOUR INTERACTIVE</p>
-      <h1 class="title">DEAD BY DAYLIGHT</h1>
-      <p class="header-desc">빛도 없고, 탈출도 없다. 오직 생존만이 있을 뿐.</p>
-    </div>
-    <div class="blood-drip"></div>
-  </header>
+  <main>
+    <section class="hero">
+      <h1>내가 좋아하는 게임들</h1>
+      <p>게임 카드를 클릭해서 자세한 정보를 확인해보세요.</p>
+    </section>
 
-  <!-- 소개 섹션 -->
-  <section class="intro">
-    <div class="intro-box">
-      <h2>게임 소개</h2>
-      <p>
-        Dead by Daylight는 1명의 살인마와 4명의 생존자가 대결하는 비대칭 멀티플레이어 공포 게임입니다.
-        생존자들은 발전기를 수리해 탈출구를 열어야 하고, 살인마는 그들을 모두 제물로 바쳐야 합니다.
-        어둠 속, 안개 가득한 지도에서 숨바꼭질과 추격의 공포가 펼쳐집니다.
-      </p>
-    </div>
-  </section>
+    <section class="game-grid">
 
-  <!-- 살인마 섹션 -->
-  <section class="killers-section">
-    <h2 class="section-title">대표 살인마</h2>
-    <p class="section-sub">카드를 클릭하면 자세한 정보를 볼 수 있습니다</p>
-    <div class="killers-grid">
+      <a href="dbd.html" class="game-card dbd">
+        <div class="card-overlay">
+          <div class="card-genre">공포 · 비대칭 멀티플레이어</div>
+          <h2>Dead by Daylight</h2>
+          <p>4명의 생존자와 1명의 살인마가 맞붙는 공포 게임. 어둠 속 숨바꼭질과 처절한 생존의 기록.</p>
+          <span class="card-btn">자세히 보기 →</span>
+        </div>
+      </a>
 
-      <div class="killer-card" data-killer="trapper">
-        <div class="card-icon trapper-icon">
-          <div class="icon-symbol">⚙</div>
+      <a href="peak.html" class="game-card peak">
+        <div class="card-overlay">
+          <div class="card-genre">협동 · 어드벤처</div>
+          <h2>Peak</h2>
+          <p>친구들과 함께 험난한 산을 오르는 협동 등산 게임. 도전과 우정이 함께하는 여정.</p>
+          <span class="card-btn">자세히 보기 →</span>
         </div>
-        <div class="card-info">
-          <h3>트래퍼</h3>
-          <p class="card-sub">The Trapper</p>
-        </div>
-        <div class="card-overlay">클릭하여 보기</div>
-      </div>
+      </a>
 
-      <div class="killer-card" data-killer="wraith">
-        <div class="card-icon wraith-icon">
-          <div class="icon-symbol">🔔</div>
+      <a href="mahjong.html" class="game-card mahjong">
+        <div class="card-overlay">
+          <div class="card-genre">보드게임 · 전략</div>
+          <h2>Mahjong Soul</h2>
+          <p>귀여운 캐릭터와 함께하는 온라인 마작. 전략과 운이 교차하는 치밀한 두뇌 싸움.</p>
+          <span class="card-btn">자세히 보기 →</span>
         </div>
-        <div class="card-info">
-          <h3>레이스</h3>
-          <p class="card-sub">The Wraith</p>
-        </div>
-        <div class="card-overlay">클릭하여 보기</div>
-      </div>
+      </a>
 
-      <div class="killer-card" data-killer="huntress">
-        <div class="card-icon huntress-icon">
-          <div class="icon-symbol">🪓</div>
+      <a href="wuthering.html" class="game-card wuthering">
+        <div class="card-overlay">
+          <div class="card-genre">액션 RPG · 오픈월드</div>
+          <h2>Wuthering Waves</h2>
+          <p>광활한 세계를 탐험하는 고품질 오픈월드 액션 RPG. 빠른 전투와 깊은 서사.</p>
+          <span class="card-btn">자세히 보기 →</span>
         </div>
-        <div class="card-info">
-          <h3>헌트리스</h3>
-          <p class="card-sub">The Huntress</p>
-        </div>
-        <div class="card-overlay">클릭하여 보기</div>
-      </div>
+      </a>
 
-      <div class="killer-card" data-killer="nurse">
-        <div class="card-icon nurse-icon">
-          <div class="icon-symbol">✂</div>
+      <a href="seven.html" class="game-card seven">
+        <div class="card-overlay">
+          <div class="card-genre">RPG · 서사</div>
+          <h2>Seven Nights Reverse</h2>
+          <p>일곱 밤에 펼쳐지는 역전의 드라마. 정교한 세계관과 깊은 스토리가 돋보이는 RPG.</p>
+          <span class="card-btn">자세히 보기 →</span>
         </div>
-        <div class="card-info">
-          <h3>너스</h3>
-          <p class="card-sub">The Nurse</p>
-        </div>
-        <div class="card-overlay">클릭하여 보기</div>
-      </div>
+      </a>
 
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- 모달 -->
-  <div class="modal-overlay" id="modal">
-    <div class="modal-box">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-inner">
-        <div class="modal-portrait" id="modalPortrait">
-          <div class="portrait-icon" id="portraitIcon"></div>
-        </div>
-        <div class="modal-details">
-          <p class="modal-en" id="modalEn"></p>
-          <h2 class="modal-name" id="modalName"></h2>
-          <div class="modal-divider"></div>
-          <p class="modal-power-label">고유 능력</p>
-          <p class="modal-power" id="modalPower"></p>
-          <div class="modal-divider"></div>
-          <p class="modal-desc" id="modalDesc"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 푸터 -->
   <footer>
-    <p>© 2016 Behaviour Interactive Inc. All rights reserved.</p>
-    <p class="footer-sub">Dead by Daylight and Behaviour are trademarks of Behaviour Interactive Inc.</p>
+    <p>© 2026 My Favorite Games · Made with ❤️</p>
   </footer>
 
   <script src="script.js"></script>
