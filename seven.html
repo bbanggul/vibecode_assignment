@@ -6,12 +6,49 @@
   <title>세븐나이츠 리버스 — My Games</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    :root {
-      --accent: #ce93d8;
-      --hero-glow: rgba(206, 147, 216, 0.2);
-    }
+    :root { --accent: #ce93d8; --hero-glow: rgba(206,147,216,0.25); }
     body { background: #070010; }
-    .page-hero { background: linear-gradient(to bottom, #140520, #070010); }
+
+    /* 스팀 없는 모바일 게임 — CSS 아트 배경 */
+    .seven-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 30%, rgba(180,80,220,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 20% 70%, rgba(100,30,180,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 40% at 50% 100%, rgba(206,147,216,0.15) 0%, transparent 50%),
+        linear-gradient(160deg, #1a0535 0%, #0d0225 40%, #200040 100%);
+      z-index: 0;
+    }
+    /* 별빛 파티클 효과 */
+    .seven-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 55% 15%, rgba(255,255,255,0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(2px 2px at 90% 25%, rgba(206,147,216,0.9) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 45% 80%, rgba(206,147,216,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 40%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(2px 2px at 25% 55%, rgba(180,120,220,0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 85%, rgba(255,255,255,0.5) 0%, transparent 100%);
+    }
+    /* 검 실루엣 장식 */
+    .seven-hero-bg::after {
+      content: '';
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%) rotate(-15deg);
+      width: 3px;
+      height: 280px;
+      background: linear-gradient(to bottom, transparent, rgba(206,147,216,0.4), rgba(206,147,216,0.6), rgba(206,147,216,0.4), transparent);
+      box-shadow: 0 0 20px rgba(206,147,216,0.4), 0 0 60px rgba(206,147,216,0.15);
+    }
   </style>
 </head>
 <body>
@@ -31,6 +68,7 @@
 
   <main>
     <section class="page-hero">
+      <div class="seven-hero-bg"></div>
       <div class="page-tag">Netmarble · 모바일 RPG</div>
       <h1>세븐나이츠<br>리버스</h1>
       <p>전설의 기사들이 돌아왔다. 넷마블이 선보이는 세븐나이츠의 새로운 이야기.</p>
